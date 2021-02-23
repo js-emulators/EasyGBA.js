@@ -11,6 +11,4 @@ Commands:
 
 
 
-```
-easyGba.loadBios(url);
-``` - 
+`easyGba.loadBios(url);` - Loads BIOS from URL. Has to be a .bin file.
