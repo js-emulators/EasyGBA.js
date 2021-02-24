@@ -26,4 +26,4 @@ To add EasyGBA.js to your webpage, add this:
 
 Thanks to [@Endrift](https://github.com/Endrift) for creating GBA.js. It is an impressive project.
 
-Library made by Unzor
+#### Library made by Unzor
