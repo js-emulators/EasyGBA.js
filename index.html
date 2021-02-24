@@ -1,7 +1,7 @@
 <h1>EasyGBA.js Demo</h1>
 <script src="dist/easygba.min.js"></script>
   <canvas style="background-color: black;" id="screen" width="900" height="600"></canvas>
-		<input id="loader" type="file" accept=".gba" onchange="easyGba.loadFile(this.files[0]);">
+		<input id="loader" type="file" accept=".gba" onchange="easyGba.loadFile(this.files[0]);" oninput="loadingFile()">
 <button onclick="easyGba.pause()">
   Pause/Resume Game
 </button>
@@ -9,3 +9,29 @@
   easyGba.loadBios('https://cdn.glitch.com/36f269f8-abf5-40ad-84a7-4cc5e7fd9d1b%2Fbios.bin?v=1613768883857');
   easyGba.setCanvas(document.querySelector('canvas'));
 </script>
+  <script>
+  var canvas = document.getElementById("screen");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillStyle = "black";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+ctx.fillStyle = "white";
+    ctx.textAlign = "center";     
+ctx.fillText("Waiting for GBA file...",450,290);
+    function loadingFile(){
+      var fullPath = document.getElementById('loader').value;
+if (fullPath) {
+    var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+    var filename = fullPath.substring(startIndex);
+    if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+        filename = filename.substring(1);
+    }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);   
+      ctx.font = "30px Arial";
+ctx.fillStyle = "black";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+ctx.fillStyle = "white";
+    ctx.textAlign = "center";     
+ctx.fillText("Loading " + filename + "...",450,290);}
+              }
+  </script>
