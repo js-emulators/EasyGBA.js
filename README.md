@@ -28,4 +28,4 @@ Thanks to [@Endrift](https://github.com/Endrift) for creating GBA.js. It is an i
 
 #### Library made by Unzor
 
-#### Original made by Endrift
+#### Original made by [@Endrift](https://github.com/Endrift)
